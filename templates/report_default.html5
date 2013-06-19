@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title><?php echo $this->headline; ?></title>
+	<style>
+		body {
+			font-family: 'Arial';
+		}
+		table {
+			font-size: 12px;
+			width: 100%;
+		}
+		th {
+			background: #c5c5c5;
+			text-align: left;
+		}
+
+		td, th {
+			padding: 3px;
+		}
+
+		td {
+			border-bottom: 1px solid #c5c5c5;
+		}
+
+
+	</style>
+</head>
+
+<body>
+<table>
+	<thead>
+	<tr>
+		<?php foreach($this->fields as $field): ?>
+			<th><?php echo $this->labels[$field]; ?></th>
+		<?php endforeach;?>
+	</tr>
+	</thead>
+
+	<tbody>
+	<?php while($this->events->next()): ?>
+		<tr>
+			<?php foreach($this->fields as $field): ?>
+				<td><?php echo Netzmacht\Reports\Translator::parseFieldValue($field, $this->events->$field, $this->table); ?></td>
+			<?php endforeach;?>
+		</tr>
+	<?php endwhile; ?>
+	</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+<div id="tl_buttons">
+	<a href="<?php echo $this->href; ?>" class="header_back" title="<?php echo $this->title; ?>"><?php echo $this->button; ?></a>
+</div>
+<h2 class="sub_headline"><?php echo $this->headline; ?></h2>
+
+<div class="tl_listing_container report_chooser">
+
+	<p><?php echo $this->description; ?></p>
+	<ul>
+	<?php while($this->reports->next()): ?>
+		<li><a href="<?php echo $this->addToUrl('rid=' . $this->reports->id); ?>"><?php echo $this->reports->title; ?></a></li>
+	<?php endwhile; ?>
+	</ul>
+</div>

@@ -1,0 +1,16 @@
+
+<div id="tl_buttons">
+	<a href="<?php echo $this->href; ?>" class="header_back" title="<?php echo $this->title; ?>"><?php echo $this->button; ?></a>
+</div>
+<h2 class="sub_headline"><?php echo $this->headline; ?></h2>
+
+<div class="tl_listing_container reports">
+
+	<?php if($this->description): ?>
+		<div class="description"><?php echo $this->description; ?></div>
+	<?php endif; ?>
+	<?php echo $this->form->generateForm(); ?>
+	<script>
+		document.getElementById('report').setAttribute('target', '_blank');
+	</script>
+</div>

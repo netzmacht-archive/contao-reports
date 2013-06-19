@@ -1,0 +1,36 @@
+.header_report {
+    padding: 2px 0 3px 20px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    margin-left: 15px;
+    background-image: url('report.png');
+}
+
+.tl_listing_container.reports .formbody > fieldset{
+    border: 1px solid #bbb;
+    margin-bottom: 1em;
+
+}
+
+.tl_listing_container.reports .widget > label {
+    display: inline-block;
+    width: 150px;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+.tl_listing_container.reports .widget input.tl_text {
+    width: 120px;
+}
+
+.tl_listing_container.reports .widget legend{
+    margin-left: 0px;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+.tl_listing_container.report_chooser li {
+    list-style-type: square;
+    margin-left: 20px;
+}
