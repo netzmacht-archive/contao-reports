@@ -31,6 +31,14 @@ $GLOBALS['TL_CSS'][] = 'system/modules/reports/assets/style.css';
 $GLOBALS['REPORTS']['filters']['yesNo'] = 'Netzmacht\\Reports\\Filter\\ReportFilterYesNo';
 $GLOBALS['REPORTS']['filters']['timeFrame'] = 'Netzmacht\\Reports\\Filter\\ReportFilterTimeFrame';
 
+foreach($GLOBALS['BE_MOD'] as $strGroupName => $arrGroup)
+{
+	foreach($arrGroup as $strModuleName => $arrModule)
+	{
+		$GLOBALS['BE_MOD'][$strGroupName][$strModuleName]['report'] = array('Netzmacht\Reports\Module\ReportsModule', 'generate');
+	}
+}
+
 /**
  * BACK END MODULES
  *

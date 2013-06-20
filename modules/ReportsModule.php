@@ -237,7 +237,7 @@ class ReportsModule extends \BackendModule
 		$arrFields = array();
 		$arrFieldsDefault = array();
 
-		foreach($arrRawFields as $arrField)
+		foreach((array) $arrRawFields as $arrField)
 		{
 			$arrFields[$arrField['name']] = Translator::getFieldLabel($arrField['name'], $this->strTable);;
 

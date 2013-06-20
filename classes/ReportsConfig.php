@@ -59,7 +59,8 @@ class ReportsConfig
 		{
 			list($strGroup, $strModule) = explode('.', $objReports->module);
 
-			$GLOBALS['BE_MOD'][$strGroup][$strModule]['report'] = array('Netzmacht\Reports\Module\ReportsModule', 'generate');
+			// does not work, see #5915
+			//$GLOBALS['BE_MOD'][$strGroup][$strModule]['report'] = array('Netzmacht\Reports\Module\ReportsModule', 'generate');
 
 			self::$arrTables[] = $objReports->tableName;
 		}
@@ -72,6 +73,12 @@ class ReportsConfig
 	 */
 	public static function onLoadDataContainer($strTable)
 	{
+		// prevent that config is executed if the extension manager is used
+		if(\Input::get('do') == 'repository_manager')
+		{
+			return;
+		}
+
 		self::initialize();
 
 		$strCurrentTable = \Input::get('table');
