@@ -210,7 +210,7 @@ $GLOBALS['TL_DCA']['tl_reports'] = array
 					)
 				)
 			),
-			'sql'                     => "varchar(255) NOT NULL default ''"
+			'sql'                     => "blob NULL"
 		),
 
 		'sortingFields' => array
@@ -246,7 +246,7 @@ $GLOBALS['TL_DCA']['tl_reports'] = array
 					)
 				)
 			),
-			'sql'                     => "varchar(255) NOT NULL default ''"
+			'sql'                     => "blob NULL"
 		),
 
 		'template' => array
